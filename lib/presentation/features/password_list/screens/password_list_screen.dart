@@ -1,8 +1,8 @@
-import 'package:brelock/features/add_items/add_category/screens/add_category_screen.dart';
-import 'package:brelock/features/add_items/add_password/add_password_screen.dart';
-import 'package:brelock/features/password_list/widget/category_card.dart';
-import 'package:brelock/features/password_list/widget/service_card.dart';
-import 'package:brelock/features/settings/settings_screen/settings_screen.dart';
+import 'package:brelock/presentation/features/add_items/add_category/screens/add_category_screen.dart';
+import 'package:brelock/presentation/features/add_items/add_password/add_password_screen.dart';
+import 'package:brelock/presentation/features/password_list/widget/category_card.dart';
+import 'package:brelock/presentation/features/password_list/widget/service_card.dart';
+import 'package:brelock/presentation/features/settings/settings_screen/settings_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 import '../../../themes/sizes.dart';

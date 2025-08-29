@@ -1,6 +1,6 @@
-import 'package:brelock/features/login/widgets/pin_code_field.dart';
-import 'package:brelock/features/password_list/screens/password_list_screen.dart';
-import 'package:brelock/themes/sizes.dart';
+import 'package:brelock/presentation/features/login/widgets/pin_code_field.dart';
+import 'package:brelock/presentation/features/password_list/screens/password_list_screen.dart';
+import 'package:brelock/presentation/themes/sizes.dart';
 import 'package:flutter/material.dart';
 
 class LoginTwoFactorAuthScreen extends StatefulWidget {

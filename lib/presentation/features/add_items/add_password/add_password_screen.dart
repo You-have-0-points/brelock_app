@@ -1,7 +1,7 @@
-import 'package:brelock/features/generate_password/screens/generate_password_screen.dart';
+import 'package:brelock/presentation/features/generate_password/screens/generate_password_screen.dart';
 import 'package:flutter/material.dart';
 
-import '../../../themes/sizes.dart';
+import 'package:brelock/presentation/themes/sizes.dart';
 
 class AddPasswordScreen extends StatefulWidget {
   AddPasswordScreen({super.key});

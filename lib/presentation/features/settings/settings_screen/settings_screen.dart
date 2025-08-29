@@ -1,5 +1,5 @@
-import 'package:brelock/features/security_settings/screens/security_settings_screen.dart';
-import 'package:brelock/features/settings_two_factor_auth/screens/two_factor_auth_screen.dart';
+import 'package:brelock/presentation/features/security_settings/screens/security_settings_screen.dart';
+import 'package:brelock/presentation/features/settings_two_factor_auth/screens/two_factor_auth_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../../../themes/sizes.dart';

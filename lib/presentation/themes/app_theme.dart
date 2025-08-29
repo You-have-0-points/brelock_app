@@ -1,4 +1,4 @@
-import 'package:brelock/themes/sizes.dart';
+import 'package:brelock/presentation/themes/sizes.dart';
 import 'package:flutter/material.dart';
 
 class AppThemes {

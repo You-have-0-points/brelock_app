@@ -1,3 +1,5 @@
+import 'package:brelock/domain/entities/password.dart';
+import 'package:brelock/presentation/features/show_password/show_password.dart';
 import 'package:flutter/material.dart';
 
 import '../../../themes/sizes.dart';
@@ -6,26 +8,35 @@ class ServiceCard extends StatelessWidget {
 
   final String serviceName;
   final bool isFavorite;
-  final String serviceIconURL; //api FavIcon генерит ссылку на лого по назавнию сайта
+  final IconData serviceIcon; //api FavIcon генерит ссылку на лого по назавнию сайта
   final VoidCallback onFavoriteIconTap;
+  final Password password;
+  final VoidCallback? onPasswordDeleted; // Добавляем callback
 
   const ServiceCard({
     required this.serviceName,
     required this.isFavorite,
-    required this.serviceIconURL,
-    super.key, required this.onFavoriteIconTap
+    required this.serviceIcon,
+    required this.password,
+    this.onPasswordDeleted, // Делаем опциональным
+    super.key, required this.onFavoriteIconTap,
   });
 
   @override
   Widget build(BuildContext context) {
     final colorScheme = ColorScheme.of(context);
     return GestureDetector(
-      onTap:
-          () =>
-          ScaffoldMessenger.of(
-            context,
-          ).showSnackBar(
-              SnackBar(content: Text("Тапнуто на сервис $serviceName"))),
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => ShowPasswordScreen(selectedPassword: password),
+          ),
+        ).then((value) {
+          // Этот код выполнится после возвращения с экрана пароля
+          onPasswordDeleted?.call();
+        });
+      },
       child: Container(
         width: double.infinity,
         height: 56,
@@ -45,9 +56,9 @@ class ServiceCard extends StatelessWidget {
           children: [
             Row(
               children: [
-                Image(image: NetworkImage(serviceIconURL),
-                  width: Sizes.iconSizeLg,
-                  height: Sizes.iconSizeLg,
+                Icon(
+                  serviceIcon,
+                  size: Sizes.iconSizeLg,
                 ),
                 SizedBox(width: Sizes.spacingSm),
                 Text(serviceName),
@@ -64,4 +75,5 @@ class ServiceCard extends StatelessWidget {
       ),
     );
   }
+
 }

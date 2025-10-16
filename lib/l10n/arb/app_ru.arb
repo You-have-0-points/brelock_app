@@ -1,0 +1,146 @@
+{
+  "@@locale": "ru",
+  "appTitle": "Brelock",
+  "newCategory": "Новая категория",
+  "categoryName": "Название",
+  "add": "Добавить",
+  "enterFolderName": "Введите имя папки",
+  "folderAlreadyExists": "Папка с таким именем уже существует",
+  "changePassword": "Смена пароля",
+  "forr": "Для",
+  "newPassword": "Новый пароль",
+  "repeatNewPassword": "Повторите новый пароль",
+  "confirm": "Подтвердить",
+  "fillAllFields": "Заполните все поля",
+  "passwordMinLength": "Пароль должен содержать минимум 6 символов",
+  "passwordsNotMatch": "Пароли не совпадают",
+  "passwordChangedSuccess": "Пароль успешно изменен",
+  "passwordChangeError": "Ошибка при изменении пароля: {error}",
+  "back": "Назад",
+  "changingPasswordAgreement": "Изменяя пароль, вы соглашаетесь с",
+  "privacyPolicy": "Политикой конфиденциальности",
+  "passwordRecovery": "Восстановление пароля",
+  "enterEmailForCode": "Введите ваш email для отправки кода подтверждения",
+  "emailAddress": "Email-адрес",
+  "supportedServices": "Поддерживаемые сервисы: Gmail, Yandex",
+  "sendCode": "Отправить код",
+  "codeSentToEmail": "На почту {email} отправлено письмо с кодом подтверждения",
+  "emailSentVia": "Письмо отправлено через {service}",
+  "confirmationCode": "Код подтверждения",
+  "resendCode": "Отправить код повторно",
+  "resendInSeconds": "Отправить повторно через {seconds} сек.",
+  "backToLogin": "Назад к входу",
+  "recoveringPasswordAgreement": "Восстанавливая пароль, вы соглашаетесь с",
+  "codeVerifiedSuccess": "Код подтвержден успешно",
+  "wrongCode": "Неверный код подтверждения",
+  "codeVerificationError": "Ошибка проверки кода: {error}",
+  "codeResent": "Код отправлен повторно",
+  "generation": "Генерация",
+  "length": "Длина: {length}",
+  "letters": "Буквы",
+  "digits": "Цифры",
+  "specialSymbols": "Специальные символы",
+  "apply": "Применить",
+  "login": "Вход",
+  "masterPassword": "Мастер-пароль",
+  "forgotPassword": "Забыли пароль?",
+  "signIn": "Войти",
+  "noAccount": "Нет аккаунта?",
+  "registration": "Регистрация",
+  "loginAgreement": "Входя, вы соглашаетесь с",
+  "wrongLoginOrPassword": "Неверный логин или пароль",
+  "loginSuccess": "Вход успешно выполнен",
+  "securitySettings": "Настройки безопасности",
+  "settings": "Настройки",
+  "language": "Язык",
+  "russian": "Русский",
+  "email": "Почта",
+  "twoFactorAuth": "2fa",
+  "disabled": "Отключено",
+  "changeMasterPassword": "Сменить мастер-пароль",
+  "connection": "Подключение",
+  "scanQRCode": "Отсканируйте QR-код с помощью приложения-аутентификатора",
+  "cantScan": "Не получается отсканировать?",
+  "copySecretKey": "Скопируйте секретный ключ",
+  "andCompleteSetup": "и завершите настройку вручную",
+  "enterVerificationCode": "Вставьте код верификации из приложения",
+  "connect": "Подключить",
+  "your2FASecret": "Ваш 2fa секрет",
+  "passwordData": "Данные пароля",
+  "url": "URL",
+  "username": "Логин",
+  "password": "Пароль",
+  "serviceName": "Название",
+  "deletePassword": "Удалить пароль?",
+  "deleteConfirmation": "Вы уверены, что хотите удалить пароль \"{passwordName}\"? Это действие нельзя отменить.",
+  "cancel": "Отмена",
+  "delete": "Удалить",
+  "close": "Закрыть",
+  "copy": "Копировать",
+  "showPassword": "Показать пароль",
+  "copiedToClipboard": "{field} скопирован в буфер обмена",
+  "searchPasswords": "Поиск паролей...",
+  "nothingFound": "Ничего не найдено",
+  "tryDifferentQuery": "Попробуйте изменить запрос",
+  "favorites": "Избранное",
+  "registrationTitle": "Регистрация",
+  "repeatMasterPassword": "Повторите мастер-пароль",
+  "alreadyHaveAccount": "Уже есть аккаунт?",
+  "register": "Зарегистрироваться",
+  "registrationAgreement": "Регистрируясь, вы соглашаетесь с",
+  "enterEmail": "Введите email-адрес",
+  "enterValidEmail": "Введите корректный email-адрес",
+  "passwordLatinOnly": "Пароль может содержать только латинские буквы, цифры и специальные символы",
+  "passwordMin8Chars": "Пароль должен содержать от 8 символов",
+  "userAlreadyExists": "Пользователь с такой почтой уже существует",
+  "tapped": "Тапнуто",
+  "tappedOnLanguage": "Тапнуто на язык",
+  "@tappedOnLanguage": {
+    "description": "Сообщение при тапе на язык в настройках"
+  },
+  "@tapped": {
+    "description": "Общее сообщение при тапе"
+  },
+  "@passwordChangeError": {
+    "description": "Сообщение об ошибке при изменении пароля",
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "@codeSentToEmail": {
+    "description": "Сообщение о отправке кода на email",
+    "placeholders": {
+      "email": {}
+    }
+  },
+  "@emailSentVia": {
+    "description": "Сообщение о том, через какой сервис отправлено письмо",
+    "placeholders": {
+      "service": {}
+    }
+  },
+  "@resendInSeconds": {
+    "description": "Таймер повторной отправки кода",
+    "placeholders": {
+      "seconds": {}
+    }
+  },
+  "@length": {
+    "description": "Длина пароля в генераторе",
+    "placeholders": {
+      "length": {}
+    }
+  },
+  "@deleteConfirmation": {
+    "description": "Подтверждение удаления пароля",
+    "placeholders": {
+      "passwordName": {}
+    }
+  },
+  "@copiedToClipboard": {
+    "description": "Сообщение о копировании в буфер обмена",
+    "placeholders": {
+      "field": {}
+    }
+  }
+}

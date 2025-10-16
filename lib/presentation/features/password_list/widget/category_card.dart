@@ -1,4 +1,3 @@
-import 'dart:ffi';
 
 import 'package:flutter/material.dart';
 
@@ -9,15 +8,17 @@ class CategoryCard extends StatelessWidget {
   final String categoryName;
   final bool isSelected;
   final VoidCallback onTap;
+  final VoidCallback? onDoubleTap;
 
-  const CategoryCard({super.key, required this.categoryName, required this.isSelected, required this.onTap});
+  const CategoryCard({super.key, required this.categoryName, required this.isSelected, required this.onTap, this.onDoubleTap});
 
   @override
   Widget build(BuildContext context) {
     final colorScheme = ColorScheme.of(context);
     return GestureDetector(
       onTap: () => onTap(),
-      child: IntrinsicWidth( //Адаптивно под размер текста названия папки
+      onDoubleTap: onDoubleTap,
+      child: IntrinsicWidth(
         child: ConstrainedBox(
           constraints: BoxConstraints.tightFor(height: 30),
           child: Container(

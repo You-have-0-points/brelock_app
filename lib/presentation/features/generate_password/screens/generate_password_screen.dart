@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:brelock/l10n/generated/app_localizations.dart';
 
 import '../../../themes/sizes.dart';
 
@@ -30,7 +31,6 @@ class _GeneratePasswordScreenState extends State<GeneratePasswordScreen> {
         );
       });
     } on ArgumentError catch (e) {
-      // Обработка ошибки, если все параметры отключены
       showDialog(
         context: context,
         builder: (context) => AlertDialog(
@@ -49,10 +49,12 @@ class _GeneratePasswordScreenState extends State<GeneratePasswordScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
     final colorScheme = ColorScheme.of(context);
+
     return Padding(
       padding: EdgeInsets.only(
-        bottom: MediaQuery.of(context).viewInsets.bottom, // Добавляет отступ снизу под клавиатуру
+        bottom: MediaQuery.of(context).viewInsets.bottom,
       ),
       child: Container(
         decoration: BoxDecoration(
@@ -68,9 +70,9 @@ class _GeneratePasswordScreenState extends State<GeneratePasswordScreen> {
               children: [
                 Container(
                   width: Sizes.iconSizeLg,
-                  margin: EdgeInsets.symmetric(horizontal: 8), //пустой контейнер чтобы нормально выроовнять элменты в шапке
+                  margin: EdgeInsets.symmetric(horizontal: 8),
                 ),
-                Text("Генерация", style: TextStyle(fontSize: Sizes.fontSizeHeading)),
+                Text(l10n!.generation, style: TextStyle(fontSize: Sizes.fontSizeHeading)),
                 IconButton(onPressed: () {
                   _generatePassword();
                 }, icon: Icon(Icons.refresh_rounded, size: Sizes.iconSizeLg,))
@@ -96,13 +98,12 @@ class _GeneratePasswordScreenState extends State<GeneratePasswordScreen> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text("Длина: ${_value.toInt()}"),
+                    Text(l10n.length(_value.toInt().toString())),
                     SizedBox(
                       width: 250,
                       child: Slider(
-
-                        inactiveColor: colorScheme.primary.withOpacity(0.2),
-                        min: 16,
+                          inactiveColor: colorScheme.primary.withOpacity(0.2),
+                          min: 16,
                           max: 32,
                           value: _value,
                           onChanged: (value) {
@@ -118,7 +119,7 @@ class _GeneratePasswordScreenState extends State<GeneratePasswordScreen> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text("Буквы"),
+                    Text(l10n.letters),
                     Switch(
                         value: _useLetters,
                         onChanged: (value) {
@@ -126,14 +127,14 @@ class _GeneratePasswordScreenState extends State<GeneratePasswordScreen> {
                             _useLetters = value;
                           });
                         }
-                        )
+                    )
                   ],
                 ),
                 Divider(),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text("Цифры"),
+                    Text(l10n.digits),
                     Switch(
                         value: _useDigits,
                         onChanged: (value) {
@@ -148,7 +149,7 @@ class _GeneratePasswordScreenState extends State<GeneratePasswordScreen> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text("Специальные символы"),
+                    Text(l10n.specialSymbols),
                     Switch(
                         value: _useSpecSymbols,
                         onChanged: (value) {
@@ -162,7 +163,7 @@ class _GeneratePasswordScreenState extends State<GeneratePasswordScreen> {
                 Divider(),
                 ElevatedButton(onPressed: () {
                   Navigator.pop(context, password);
-                }, child: Text("Применить"))
+                }, child: Text(l10n.apply))
               ],
             ),
             SizedBox(height: Sizes.spacingSm),
@@ -171,6 +172,7 @@ class _GeneratePasswordScreenState extends State<GeneratePasswordScreen> {
       ),
     );
   }
+
   String generatePassword({
     int length = 16,
     bool useLetters = true,
@@ -186,12 +188,10 @@ class _GeneratePasswordScreenState extends State<GeneratePasswordScreen> {
     if (useDigits) availableChars += digits;
     if (useSpecial) availableChars += special;
 
-    // Проверяем, что есть доступные символы
     if (availableChars.isEmpty) {
       throw ArgumentError('Хотя бы один тип символов должен быть включен');
     }
 
-    // Генерируем пароль
     final random = Random.secure();
     return String.fromCharCodes(
       Iterable.generate(
@@ -202,6 +202,4 @@ class _GeneratePasswordScreenState extends State<GeneratePasswordScreen> {
       ),
     );
   }
-
 }
-

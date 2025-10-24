@@ -513,4 +513,13 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get lengthen => 'Lengthen';
+
+  @override
+  String get splashLoading => 'Loading...';
+
+  @override
+  String get offlineMode => 'Offline';
+
+  @override
+  String get logout => 'Log out';
 }

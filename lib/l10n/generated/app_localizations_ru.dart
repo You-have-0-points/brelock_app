@@ -515,4 +515,13 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get lengthen => 'Удлинить';
+
+  @override
+  String get splashLoading => 'Загрузка...';
+
+  @override
+  String get offlineMode => 'Режим офлайн';
+
+  @override
+  String get logout => 'Выйти';
 }

@@ -216,5 +216,8 @@
   "strengthen": "Усилить",
   "change": "Изменить",
   "update": "Обновить",
-  "lengthen": "Удлинить"
+  "lengthen": "Удлинить",
+  "splashLoading": "Загрузка...",
+  "offlineMode": "Режим офлайн",
+  "logout": "Выйти"
 }

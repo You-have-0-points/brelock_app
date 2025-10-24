@@ -21,6 +21,7 @@ dependencies:
   cupertino_icons: ^1.0.8
   shared_preferences: ^2.2.2
   mailer: ^6.5.0
+  connectivity_plus: ^5.0.1
   flutter_localizations: # Добавляем пакет для локализации
       sdk: flutter
   intl: any # Для дополнительных возможностей

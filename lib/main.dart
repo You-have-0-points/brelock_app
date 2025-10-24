@@ -7,6 +7,7 @@ import 'package:brelock/presentation/language_provider.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:brelock/l10n/generated/app_localizations.dart';
+import 'package:brelock/presentation/features/splash/splash_screen.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -45,7 +46,7 @@ class MyApp extends StatelessWidget {
               Locale('en', ''),
             ],
             locale: languageProvider.locale,
-            home: LoginScreen(),
+            home: SplashScreen(),
           );
         },
       ),

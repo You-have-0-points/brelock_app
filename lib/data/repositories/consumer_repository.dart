@@ -31,6 +31,11 @@ class ConsumerRepository {
     return translator.toEntity(data);
   }
 
+  Future<Consumer> getByIdString(String id) async{
+    final data = await dataSource.getById(id);
+    return translator.toEntity(data);
+  }
+
   Future<Consumer> getByEmail(String email) async {
     final data = await dataSource.getByEmail(email);
     return translator.toEntity(data);

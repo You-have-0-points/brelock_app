@@ -217,5 +217,8 @@
   "strengthen": "Strengthen",
   "change": "Change",
   "update": "Update",
-  "lengthen": "Lengthen"
+  "lengthen": "Lengthen",
+  "splashLoading": "Loading...",
+  "offlineMode": "Offline",
+  "logout": "Log out"
 }

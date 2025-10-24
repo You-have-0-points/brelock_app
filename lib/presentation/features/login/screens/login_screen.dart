@@ -7,6 +7,9 @@ import 'package:brelock/presentation/themes/sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:brelock/di_injector.dart';
 import 'package:brelock/l10n/generated/app_localizations.dart';
+import 'package:brelock/services/local_storage_service.dart';
+
+import '../../../../domain/entities/consumer_setting.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -175,12 +178,21 @@ class _LoginScreenState extends State<LoginScreen> {
                             print("FIRST RULE OF FIGHT CLUB IS ${cons.id}");
                             current_consumer.copy(cons);
 
+                            // Сохраняем учетные данные
+                            await LocalStorageService.saveUserCredentials(
+                              current_consumer.id!.uuid,
+                              current_consumer.email!,
+                            );
+
+                            // Сохраняем полные данные пользователя в кэш
+                            await _cacheUserData();
+
                             if (current_consumer.twoFactorEnabled) {
                               _showTwoFactorDialog(context);
                             } else {
                               Navigator.push(context, MaterialPageRoute(builder: (context) => LoginTwoFactorAuthScreen()));
                             }
-                          }else{
+                          } else {
                             ScaffoldMessenger.of(context).showSnackBar(
                               SnackBar(content: Text(l10n.wrongLoginOrPassword)),
                             );
@@ -253,4 +265,37 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 
   void _showExitDialog(BuildContext context) {}
+
+  Future<void> _cacheUserData() async {
+    try {
+      final userData = {
+        'id': current_consumer.id?.uuid,
+        'email': current_consumer.email,
+        'password': current_consumer.password,
+        'setting': _settingToMap(current_consumer.setting),
+        'folder_ids': current_consumer.folderIds?.map((id) => id.uuid).toList(),
+        'two_factor_enabled': current_consumer.twoFactorEnabled,
+        'two_factor_secret': current_consumer.twoFactorSecret,
+        'two_factor_enabled_at': current_consumer.twoFactorEnabledAt?.toIso8601String(),
+        'created_at': current_consumer.createdAt?.toIso8601String(),
+        'logged_at': current_consumer.loggedAt?.toIso8601String(),
+      };
+
+      await LocalStorageService.cacheUserData(userData);
+      print('✅ User data cached successfully');
+    } catch (e) {
+      print('❌ Error caching user data: $e');
+    }
+  }
+
+  Map<String, dynamic>? _settingToMap(ConsumerSetting? setting) {
+    if (setting == null) return null;
+
+    return {
+      'theme': setting.theme.toString(),
+      'language': setting.language.toString(),
+      'auto_lock_timeout': setting.autoLockTimeout.inMinutes,
+      'show_password_strength': setting.showPasswordStrength,
+    };
+  }
 }

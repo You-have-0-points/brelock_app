@@ -1045,6 +1045,24 @@ abstract class AppLocalizations {
   /// In ru, this message translates to:
   /// **'Удлинить'**
   String get lengthen;
+
+  /// No description provided for @splashLoading.
+  ///
+  /// In ru, this message translates to:
+  /// **'Загрузка...'**
+  String get splashLoading;
+
+  /// No description provided for @offlineMode.
+  ///
+  /// In ru, this message translates to:
+  /// **'Режим офлайн'**
+  String get offlineMode;
+
+  /// No description provided for @logout.
+  ///
+  /// In ru, this message translates to:
+  /// **'Выйти'**
+  String get logout;
 }
 
 class _AppLocalizationsDelegate

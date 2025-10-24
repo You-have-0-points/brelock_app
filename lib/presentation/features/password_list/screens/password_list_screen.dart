@@ -14,6 +14,8 @@ import '../../../themes/sizes.dart';
 import 'package:provider/provider.dart';
 import 'package:brelock/presentation/theme_provider.dart';
 import 'package:brelock/l10n/generated/app_localizations.dart';
+import 'package:brelock/presentation/features/breach_check/screens/breach_check_screen.dart';
+import 'package:brelock/presentation/features/analytics/screens/analytics_screen.dart';
 
 class PasswordListScreen extends StatefulWidget {
   const PasswordListScreen({super.key});
@@ -328,6 +330,42 @@ class _PasswordListScreenState extends State<PasswordListScreen> {
                   height: 1,
                   color: colorScheme.outlineVariant,
                 ),
+                ListTile(
+                  leading: Icon(Icons.security),
+                  title: Text(l10n.breachCheck),
+                  onTap: () {
+                    Navigator.pop(context);
+                    Navigator.push(context, MaterialPageRoute(
+                        builder: (context) => BreachCheckScreen()
+                    ));
+                  },
+                  /*trailing: Container(
+                    padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                    decoration: BoxDecoration(
+                      color: Colors.green,
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: Text(
+                      l10n.safe,
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 12,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ), */
+                ),
+                ListTile(
+                  leading: Icon(Icons.analytics_outlined),
+                  title: Text('Аналитика паролей'),
+                  onTap: () {
+                    Navigator.pop(context);
+                    Navigator.push(context, MaterialPageRoute(
+                        builder: (context) => AnalyticsScreen()
+                    ));
+                  },
+                ),
+                Divider(), // Добавить разделитель если нужно
               ],
             ),
           ),

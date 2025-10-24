@@ -16,7 +16,10 @@ class ConsumerTranslator{
       "created_at": consumer.createdAt!.toIso8601String(),
       "logged_at": consumer.loggedAt!.toIso8601String(),
       "setting": settingsTranslator.toDocument(consumer.setting!),
-      "folder_ids": _many_ids_to_document(consumer.folderIds!)
+      "folder_ids": _many_ids_to_document(consumer.folderIds!),
+      "two_factor_secret": consumer.twoFactorSecret,
+      "two_factor_enabled": consumer.twoFactorEnabled,
+      "two_factor_enabled_at": consumer.twoFactorEnabledAt?.toIso8601String(),
     };
   }
 
@@ -28,10 +31,15 @@ class ConsumerTranslator{
       setting: settingsTranslator.toEntity(consumerData["setting"]!),
       createdAt: DateTime.parse(consumerData["created_at"]),
       loggedAt: DateTime.parse(consumerData["logged_at"]),
-      folderIds: _many_ids_to_entity(consumerData["folder_ids"]!)
+      folderIds: _many_ids_to_entity(consumerData["folder_ids"]!),
+      twoFactorSecret: consumerData["two_factor_secret"],
+      twoFactorEnabled: consumerData["two_factor_enabled"] ?? false,
+      twoFactorEnabledAt: consumerData["two_factor_enabled_at"] != null
+          ? DateTime.parse(consumerData["two_factor_enabled_at"])
+          : null,
     );
   }
-  
+
   List<String> _many_ids_to_document(List<UuidValue> list){
     List<String> result = [];
     list.forEach((element){

@@ -146,7 +146,7 @@ class AppLocalizationsRu extends AppLocalizations {
   String get apply => 'Применить';
 
   @override
-  String get login => 'Вход';
+  String get login => 'Логин';
 
   @override
   String get masterPassword => 'Мастер-пароль';
@@ -188,7 +188,7 @@ class AppLocalizationsRu extends AppLocalizations {
   String get email => 'Почта';
 
   @override
-  String get twoFactorAuth => '2fa';
+  String get twoFactorAuth => 'Двухфакторная аутентификация';
 
   @override
   String get disabled => 'Отключено';
@@ -200,26 +200,25 @@ class AppLocalizationsRu extends AppLocalizations {
   String get connection => 'Подключение';
 
   @override
-  String get scanQRCode =>
-      'Отсканируйте QR-код с помощью приложения-аутентификатора';
+  String get scanQRCode => 'Отсканируйте QR-код в приложении аутентификации';
 
   @override
-  String get cantScan => 'Не получается отсканировать?';
+  String get cantScan => 'Не получается отсканировать код?';
 
   @override
-  String get copySecretKey => 'Скопируйте секретный ключ';
+  String get copySecretKey => 'скопируйте секретный ключ';
 
   @override
-  String get andCompleteSetup => 'и завершите настройку вручную';
+  String get andCompleteSetup => ' и завершите настройку вручную';
 
   @override
-  String get enterVerificationCode => 'Вставьте код верификации из приложения';
+  String get enterVerificationCode => 'Введите код подтверждения из приложения';
 
   @override
   String get connect => 'Подключить';
 
   @override
-  String get your2FASecret => 'Ваш 2fa секрет';
+  String get your2FASecret => 'Ваш секретный ключ 2FA';
 
   @override
   String get passwordData => 'Данные пароля';
@@ -312,4 +311,208 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get tappedOnLanguage => 'Тапнуто на язык';
+
+  @override
+  String get success => 'Успешно';
+
+  @override
+  String get pleaseEnterVerificationCode =>
+      'Пожалуйста, введите код для верификации';
+
+  @override
+  String get verificationCodeMustBe6Digits => 'Код должен состоять из 6 цифр';
+
+  @override
+  String get chooseExportFormat => 'Выберите формат экспорта';
+
+  @override
+  String get jsonFormatDescription => 'Структурированные данные с метаданными';
+
+  @override
+  String get csvFormatDescription => 'Табличный формат для электронных таблиц';
+
+  @override
+  String get exportedPasswords => 'Экспортированные пароли из Brelock';
+
+  @override
+  String get exportSuccessful => 'Экспорт успешно завершен';
+
+  @override
+  String get exportError => 'Ошибка экспорта';
+
+  @override
+  String get importPasswords => 'Импорт паролей';
+
+  @override
+  String get importConfirmation =>
+      'Существующие пароли будут сохранены. Продолжить?';
+
+  @override
+  String get importComplete => 'Импорт завершен';
+
+  @override
+  String importedCount(Object count) {
+    return 'Импортировано $count паролей';
+  }
+
+  @override
+  String get importError => 'Ошибка импорта';
+
+  @override
+  String get unsupportedFileFormat => 'Неподдерживаемый формат файла';
+
+  @override
+  String get dataManagement => 'Управление данными';
+
+  @override
+  String get exportDescription => 'Экспорт всех паролей в файл';
+
+  @override
+  String get importDescription => 'Импорт паролей из файла';
+
+  @override
+  String get security => 'Безопасность';
+
+  @override
+  String get securitySettingsDescription =>
+      'Расширенные настройки безопасности';
+
+  @override
+  String get ok => 'OK';
+
+  @override
+  String get import => 'Импорт';
+
+  @override
+  String get breachCheck => 'Проверка безопасности';
+
+  @override
+  String get checkingForBreaches => 'Проверяем наличие утечек данных...';
+
+  @override
+  String get breachCheckDescription =>
+      'Проверяем, не были ли ваши пароли скомпрометированы в известных утечках данных';
+
+  @override
+  String get noBreachesFound => 'Утечек не найдено!';
+
+  @override
+  String get breachesFound => 'Обнаружены потенциальные утечки';
+
+  @override
+  String checkedPasswordsCount(Object count) {
+    return 'Проверено $count паролей';
+  }
+
+  @override
+  String get allPasswordsSecure => 'Все пароли защищены';
+
+  @override
+  String get noCompromisedPasswords =>
+      'Ваши пароли не найдены в известных утечках данных';
+
+  @override
+  String compromisedPasswords(Object count) {
+    return 'Скомпрометированные пароли: $count';
+  }
+
+  @override
+  String get breachSource => 'Источник утечки';
+
+  @override
+  String get breachDate => 'Дата утечки';
+
+  @override
+  String get whatToDo => 'Что делать?';
+
+  @override
+  String get breachActionAdvice =>
+      'Немедленно измените эти пароли. Используйте надежные уникальные пароли для каждого сервиса.';
+
+  @override
+  String get recheckBreaches => 'Проверить снова';
+
+  @override
+  String get howItWorks => 'Как это работает';
+
+  @override
+  String get breachCheckInfo =>
+      'Мы проверяем ваши пароли по базам данных известных утечек. Ваши пароли никогда не отправляются на внешние серверы.';
+
+  @override
+  String lastChecked(Object date) {
+    return 'Последняя проверка: $date';
+  }
+
+  @override
+  String get checkPasswordLeaks => 'Проверить на утечки паролей';
+
+  @override
+  String get safe => 'БЕЗОПАСНО';
+
+  @override
+  String get breachCheckError => 'Проверка не удалась';
+
+  @override
+  String get tryAgain => 'Попробовать снова';
+
+  @override
+  String get passwordAnalytics => 'Аналитика паролей';
+
+  @override
+  String get overallSecurity => 'Общая безопасность';
+
+  @override
+  String get securityLevel => 'Уровень безопасности';
+
+  @override
+  String get recommendations => 'Рекомендации';
+
+  @override
+  String get detailedStatistics => 'Детальная статистика';
+
+  @override
+  String get totalPasswords => 'Всего паролей';
+
+  @override
+  String get strongPasswords => 'Надежные пароли';
+
+  @override
+  String get mediumPasswords => 'Средние пароли';
+
+  @override
+  String get weakPasswords => 'Слабые пароли';
+
+  @override
+  String get averageLength => 'Средняя длина';
+
+  @override
+  String get reusedPasswords => 'Повторяющиеся пароли';
+
+  @override
+  String get oldPasswords => 'Устаревшие пароли';
+
+  @override
+  String get weakPasswordsFound => 'Слабые пароли обнаружены';
+
+  @override
+  String get reusedPasswordsFound => 'Повторяющиеся пароли';
+
+  @override
+  String get oldPasswordsFound => 'Устаревшие пароли';
+
+  @override
+  String get shortPasswords => 'Короткие пароли';
+
+  @override
+  String get strengthen => 'Усилить';
+
+  @override
+  String get change => 'Изменить';
+
+  @override
+  String get update => 'Обновить';
+
+  @override
+  String get lengthen => 'Удлинить';
 }

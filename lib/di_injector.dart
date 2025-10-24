@@ -20,6 +20,11 @@ import 'package:brelock/data/translators/password_translator.dart';
 import 'package:brelock/data/translators/service_translator.dart';
 
 import 'package:brelock/domain/usecases/consumer_interactor.dart';
+import 'package:brelock/domain/usecases/export_interactor.dart';
+import 'package:brelock/domain/usecases/import_interactor.dart';
+
+import 'package:brelock/domain/usecases/breach_check_interactor.dart';
+import 'package:brelock/domain/usecases/password_analytics_interactor.dart';
 
 
 final supabase = Supabase.instance.client;
@@ -41,5 +46,22 @@ ConsumerRepository consumerRepository = ConsumerRepository(dataSource: consumerD
 FolderInteractor folderInteractor = FolderInteractor(folderRepository: folderRepository);
 PasswordInteractor passwordInteractor = PasswordInteractor(passwordRepository);
 ConsumerInteractor consumerInteractor = ConsumerInteractor(consumerRepository: consumerRepository, folderInteractor: folderInteractor);
+ExportInteractor exportInteractor = ExportInteractor(
+  passwordInteractor: passwordInteractor,
+  folderInteractor: folderInteractor,
+);
+
+ImportInteractor importInteractor = ImportInteractor(
+  passwordInteractor: passwordInteractor,
+  folderInteractor: folderInteractor,
+);
+
+BreachCheckInteractor breachCheckInteractor = BreachCheckInteractor(
+  passwordInteractor: passwordInteractor,
+);
+
+final PasswordAnalyticsInteractor passwordAnalyticsInteractor = PasswordAnalyticsInteractor(
+  passwordInteractor: passwordInteractor,
+);
 
 Consumer current_consumer = Consumer.empty();

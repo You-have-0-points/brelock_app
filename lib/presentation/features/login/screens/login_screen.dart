@@ -1,4 +1,5 @@
 import 'package:brelock/domain/entities/consumer.dart';
+import 'package:brelock/presentation/features/login/screens/login_two_factor_auth_screen.dart';
 import 'package:brelock/presentation/features/password_list/screens/password_list_screen.dart';
 import 'package:brelock/presentation/features/forgot_password/forgot_password_screen.dart';
 import 'package:brelock/presentation/features/register/screens/register_screen.dart';
@@ -24,6 +25,59 @@ class _LoginScreenState extends State<LoginScreen> {
     _emailController.dispose();
     _passwordController.dispose();
     super.dispose();
+  }
+
+  void _showTwoFactorDialog(BuildContext context) {
+    final codeController = TextEditingController();
+
+    showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder: (context) => AlertDialog(
+        title: Text("Двухфакторная аутентификация"),
+        content: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text("Введите код из приложения аутентификации"),
+            SizedBox(height: Sizes.spacingMd),
+            TextFormField(
+              controller: codeController,
+              keyboardType: TextInputType.number,
+              maxLength: 6,
+              textAlign: TextAlign.center,
+              style: TextStyle(fontSize: Sizes.fontSizeLarge),
+              decoration: InputDecoration(
+                hintText: "000000",
+                counterText: "",
+              ),
+            ),
+          ],
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(context),
+            child: Text("Отмена"),
+          ),
+          ElevatedButton(
+            onPressed: () async {
+              final code = codeController.text.trim();
+              if (code.length == 6) {
+                final isValid = await consumerInteractor.verifyTwoFactorCode(code);
+                if (isValid) {
+                  Navigator.pop(context);
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => PasswordListScreen()));
+                } else {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(content: Text("Неверный код")),
+                  );
+                }
+              }
+            },
+            child: Text("Подтвердить"),
+          ),
+        ],
+      ),
+    );
   }
 
   @override
@@ -116,11 +170,16 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                         SizedBox(height: Sizes.spacingMd),
                         ElevatedButton(onPressed: () async {
-                          Consumer cons = (await consumerRepository.getByLoginData(_emailController.text.trim(), _passwordController.text.trim()))!;
+                          Consumer? cons = await consumerRepository.getByLoginData(_emailController.text.trim(), _passwordController.text.trim());
                           if(cons != null){
                             print("FIRST RULE OF FIGHT CLUB IS ${cons.id}");
                             current_consumer.copy(cons);
-                            Navigator.push(context, MaterialPageRoute(builder: (context) => PasswordListScreen()));
+
+                            if (current_consumer.twoFactorEnabled) {
+                              _showTwoFactorDialog(context);
+                            } else {
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => LoginTwoFactorAuthScreen()));
+                            }
                           }else{
                             ScaffoldMessenger.of(context).showSnackBar(
                               SnackBar(content: Text(l10n.wrongLoginOrPassword)),

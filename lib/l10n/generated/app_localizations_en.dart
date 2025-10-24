@@ -187,7 +187,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get email => 'Email';
 
   @override
-  String get twoFactorAuth => '2FA';
+  String get twoFactorAuth => 'Two-Factor Authentication';
 
   @override
   String get disabled => 'Disabled';
@@ -199,16 +199,16 @@ class AppLocalizationsEn extends AppLocalizations {
   String get connection => 'Connection';
 
   @override
-  String get scanQRCode => 'Scan QR code with authenticator app';
+  String get scanQRCode => 'Scan the QR code in your authenticator app';
 
   @override
-  String get cantScan => 'Can\'t scan?';
+  String get cantScan => 'Can\'t scan the code?';
 
   @override
-  String get copySecretKey => 'Copy secret key';
+  String get copySecretKey => 'copy the secret key';
 
   @override
-  String get andCompleteSetup => 'and complete setup manually';
+  String get andCompleteSetup => ' and complete setup manually';
 
   @override
   String get enterVerificationCode => 'Enter verification code from app';
@@ -217,7 +217,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get connect => 'Connect';
 
   @override
-  String get your2FASecret => 'Your 2FA Secret';
+  String get your2FASecret => 'Your 2FA Secret Key';
 
   @override
   String get passwordData => 'Password Data';
@@ -310,4 +310,207 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get tappedOnLanguage => 'Tapped on language';
+
+  @override
+  String get success => 'Success';
+
+  @override
+  String get pleaseEnterVerificationCode => 'Please, enter verification code';
+
+  @override
+  String get verificationCodeMustBe6Digits =>
+      'Verification code must be 6 digits';
+
+  @override
+  String get chooseExportFormat => 'Choose export format';
+
+  @override
+  String get jsonFormatDescription => 'Structured data with metadata';
+
+  @override
+  String get csvFormatDescription => 'Table format for spreadsheets';
+
+  @override
+  String get exportedPasswords => 'Exported passwords from Brelock';
+
+  @override
+  String get exportSuccessful => 'Export completed successfully';
+
+  @override
+  String get exportError => 'Export error';
+
+  @override
+  String get importPasswords => 'Import passwords';
+
+  @override
+  String get importConfirmation =>
+      'Existing passwords will be preserved. Continue?';
+
+  @override
+  String get importComplete => 'Import complete';
+
+  @override
+  String importedCount(Object count) {
+    return 'Imported $count passwords';
+  }
+
+  @override
+  String get importError => 'Import error';
+
+  @override
+  String get unsupportedFileFormat => 'Unsupported file format';
+
+  @override
+  String get dataManagement => 'Data Management';
+
+  @override
+  String get exportDescription => 'Export all passwords to file';
+
+  @override
+  String get importDescription => 'Import passwords from file';
+
+  @override
+  String get security => 'Security';
+
+  @override
+  String get securitySettingsDescription => 'Advanced security options';
+
+  @override
+  String get ok => 'OK';
+
+  @override
+  String get import => 'Import';
+
+  @override
+  String get breachCheck => 'Security Check';
+
+  @override
+  String get checkingForBreaches => 'Checking for data breaches...';
+
+  @override
+  String get breachCheckDescription =>
+      'We\'re checking if your passwords have been compromised in known data breaches';
+
+  @override
+  String get noBreachesFound => 'No breaches found!';
+
+  @override
+  String get breachesFound => 'Potential breaches found';
+
+  @override
+  String checkedPasswordsCount(Object count) {
+    return 'Checked $count passwords';
+  }
+
+  @override
+  String get allPasswordsSecure => 'All passwords are secure';
+
+  @override
+  String get noCompromisedPasswords =>
+      'None of your passwords were found in known data breaches';
+
+  @override
+  String compromisedPasswords(Object count) {
+    return 'Compromised passwords: $count';
+  }
+
+  @override
+  String get breachSource => 'Breach source';
+
+  @override
+  String get breachDate => 'Breach date';
+
+  @override
+  String get whatToDo => 'What to do?';
+
+  @override
+  String get breachActionAdvice =>
+      'Change these passwords immediately. Use strong, unique passwords for each service.';
+
+  @override
+  String get recheckBreaches => 'Re-check';
+
+  @override
+  String get howItWorks => 'How it works';
+
+  @override
+  String get breachCheckInfo =>
+      'We check your passwords against databases of known security breaches. Your passwords are never sent to external servers.';
+
+  @override
+  String lastChecked(Object date) {
+    return 'Last checked: $date';
+  }
+
+  @override
+  String get checkPasswordLeaks => 'Check for password leaks';
+
+  @override
+  String get safe => 'SAFE';
+
+  @override
+  String get breachCheckError => 'Check failed';
+
+  @override
+  String get tryAgain => 'Try again';
+
+  @override
+  String get passwordAnalytics => 'Password Analytics';
+
+  @override
+  String get overallSecurity => 'Overall Security';
+
+  @override
+  String get securityLevel => 'Security Level';
+
+  @override
+  String get recommendations => 'Recommendations';
+
+  @override
+  String get detailedStatistics => 'Detailed Statistics';
+
+  @override
+  String get totalPasswords => 'Total Passwords';
+
+  @override
+  String get strongPasswords => 'Strong Passwords';
+
+  @override
+  String get mediumPasswords => 'Medium Passwords';
+
+  @override
+  String get weakPasswords => 'Weak Passwords';
+
+  @override
+  String get averageLength => 'Average Length';
+
+  @override
+  String get reusedPasswords => 'Reused Passwords';
+
+  @override
+  String get oldPasswords => 'Old Passwords';
+
+  @override
+  String get weakPasswordsFound => 'Weak passwords found';
+
+  @override
+  String get reusedPasswordsFound => 'Reused passwords';
+
+  @override
+  String get oldPasswordsFound => 'Old passwords';
+
+  @override
+  String get shortPasswords => 'Short passwords';
+
+  @override
+  String get strengthen => 'Strengthen';
+
+  @override
+  String get change => 'Change';
+
+  @override
+  String get update => 'Update';
+
+  @override
+  String get lengthen => 'Lengthen';
 }

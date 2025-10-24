@@ -347,7 +347,7 @@ abstract class AppLocalizations {
   /// No description provided for @login.
   ///
   /// In ru, this message translates to:
-  /// **'Вход'**
+  /// **'Логин'**
   String get login;
 
   /// No description provided for @masterPassword.
@@ -431,7 +431,7 @@ abstract class AppLocalizations {
   /// No description provided for @twoFactorAuth.
   ///
   /// In ru, this message translates to:
-  /// **'2fa'**
+  /// **'Двухфакторная аутентификация'**
   String get twoFactorAuth;
 
   /// No description provided for @disabled.
@@ -455,31 +455,31 @@ abstract class AppLocalizations {
   /// No description provided for @scanQRCode.
   ///
   /// In ru, this message translates to:
-  /// **'Отсканируйте QR-код с помощью приложения-аутентификатора'**
+  /// **'Отсканируйте QR-код в приложении аутентификации'**
   String get scanQRCode;
 
   /// No description provided for @cantScan.
   ///
   /// In ru, this message translates to:
-  /// **'Не получается отсканировать?'**
+  /// **'Не получается отсканировать код?'**
   String get cantScan;
 
   /// No description provided for @copySecretKey.
   ///
   /// In ru, this message translates to:
-  /// **'Скопируйте секретный ключ'**
+  /// **'скопируйте секретный ключ'**
   String get copySecretKey;
 
   /// No description provided for @andCompleteSetup.
   ///
   /// In ru, this message translates to:
-  /// **'и завершите настройку вручную'**
+  /// **' и завершите настройку вручную'**
   String get andCompleteSetup;
 
   /// No description provided for @enterVerificationCode.
   ///
   /// In ru, this message translates to:
-  /// **'Вставьте код верификации из приложения'**
+  /// **'Введите код подтверждения из приложения'**
   String get enterVerificationCode;
 
   /// No description provided for @connect.
@@ -491,7 +491,7 @@ abstract class AppLocalizations {
   /// No description provided for @your2FASecret.
   ///
   /// In ru, this message translates to:
-  /// **'Ваш 2fa секрет'**
+  /// **'Ваш секретный ключ 2FA'**
   String get your2FASecret;
 
   /// No description provided for @passwordData.
@@ -667,6 +667,384 @@ abstract class AppLocalizations {
   /// In ru, this message translates to:
   /// **'Тапнуто на язык'**
   String get tappedOnLanguage;
+
+  /// No description provided for @success.
+  ///
+  /// In ru, this message translates to:
+  /// **'Успешно'**
+  String get success;
+
+  /// No description provided for @pleaseEnterVerificationCode.
+  ///
+  /// In ru, this message translates to:
+  /// **'Пожалуйста, введите код для верификации'**
+  String get pleaseEnterVerificationCode;
+
+  /// No description provided for @verificationCodeMustBe6Digits.
+  ///
+  /// In ru, this message translates to:
+  /// **'Код должен состоять из 6 цифр'**
+  String get verificationCodeMustBe6Digits;
+
+  /// No description provided for @chooseExportFormat.
+  ///
+  /// In ru, this message translates to:
+  /// **'Выберите формат экспорта'**
+  String get chooseExportFormat;
+
+  /// No description provided for @jsonFormatDescription.
+  ///
+  /// In ru, this message translates to:
+  /// **'Структурированные данные с метаданными'**
+  String get jsonFormatDescription;
+
+  /// No description provided for @csvFormatDescription.
+  ///
+  /// In ru, this message translates to:
+  /// **'Табличный формат для электронных таблиц'**
+  String get csvFormatDescription;
+
+  /// No description provided for @exportedPasswords.
+  ///
+  /// In ru, this message translates to:
+  /// **'Экспортированные пароли из Brelock'**
+  String get exportedPasswords;
+
+  /// No description provided for @exportSuccessful.
+  ///
+  /// In ru, this message translates to:
+  /// **'Экспорт успешно завершен'**
+  String get exportSuccessful;
+
+  /// No description provided for @exportError.
+  ///
+  /// In ru, this message translates to:
+  /// **'Ошибка экспорта'**
+  String get exportError;
+
+  /// No description provided for @importPasswords.
+  ///
+  /// In ru, this message translates to:
+  /// **'Импорт паролей'**
+  String get importPasswords;
+
+  /// No description provided for @importConfirmation.
+  ///
+  /// In ru, this message translates to:
+  /// **'Существующие пароли будут сохранены. Продолжить?'**
+  String get importConfirmation;
+
+  /// No description provided for @importComplete.
+  ///
+  /// In ru, this message translates to:
+  /// **'Импорт завершен'**
+  String get importComplete;
+
+  /// No description provided for @importedCount.
+  ///
+  /// In ru, this message translates to:
+  /// **'Импортировано {count} паролей'**
+  String importedCount(Object count);
+
+  /// No description provided for @importError.
+  ///
+  /// In ru, this message translates to:
+  /// **'Ошибка импорта'**
+  String get importError;
+
+  /// No description provided for @unsupportedFileFormat.
+  ///
+  /// In ru, this message translates to:
+  /// **'Неподдерживаемый формат файла'**
+  String get unsupportedFileFormat;
+
+  /// No description provided for @dataManagement.
+  ///
+  /// In ru, this message translates to:
+  /// **'Управление данными'**
+  String get dataManagement;
+
+  /// No description provided for @exportDescription.
+  ///
+  /// In ru, this message translates to:
+  /// **'Экспорт всех паролей в файл'**
+  String get exportDescription;
+
+  /// No description provided for @importDescription.
+  ///
+  /// In ru, this message translates to:
+  /// **'Импорт паролей из файла'**
+  String get importDescription;
+
+  /// No description provided for @security.
+  ///
+  /// In ru, this message translates to:
+  /// **'Безопасность'**
+  String get security;
+
+  /// No description provided for @securitySettingsDescription.
+  ///
+  /// In ru, this message translates to:
+  /// **'Расширенные настройки безопасности'**
+  String get securitySettingsDescription;
+
+  /// No description provided for @ok.
+  ///
+  /// In ru, this message translates to:
+  /// **'OK'**
+  String get ok;
+
+  /// No description provided for @import.
+  ///
+  /// In ru, this message translates to:
+  /// **'Импорт'**
+  String get import;
+
+  /// No description provided for @breachCheck.
+  ///
+  /// In ru, this message translates to:
+  /// **'Проверка безопасности'**
+  String get breachCheck;
+
+  /// No description provided for @checkingForBreaches.
+  ///
+  /// In ru, this message translates to:
+  /// **'Проверяем наличие утечек данных...'**
+  String get checkingForBreaches;
+
+  /// No description provided for @breachCheckDescription.
+  ///
+  /// In ru, this message translates to:
+  /// **'Проверяем, не были ли ваши пароли скомпрометированы в известных утечках данных'**
+  String get breachCheckDescription;
+
+  /// No description provided for @noBreachesFound.
+  ///
+  /// In ru, this message translates to:
+  /// **'Утечек не найдено!'**
+  String get noBreachesFound;
+
+  /// No description provided for @breachesFound.
+  ///
+  /// In ru, this message translates to:
+  /// **'Обнаружены потенциальные утечки'**
+  String get breachesFound;
+
+  /// No description provided for @checkedPasswordsCount.
+  ///
+  /// In ru, this message translates to:
+  /// **'Проверено {count} паролей'**
+  String checkedPasswordsCount(Object count);
+
+  /// No description provided for @allPasswordsSecure.
+  ///
+  /// In ru, this message translates to:
+  /// **'Все пароли защищены'**
+  String get allPasswordsSecure;
+
+  /// No description provided for @noCompromisedPasswords.
+  ///
+  /// In ru, this message translates to:
+  /// **'Ваши пароли не найдены в известных утечках данных'**
+  String get noCompromisedPasswords;
+
+  /// No description provided for @compromisedPasswords.
+  ///
+  /// In ru, this message translates to:
+  /// **'Скомпрометированные пароли: {count}'**
+  String compromisedPasswords(Object count);
+
+  /// No description provided for @breachSource.
+  ///
+  /// In ru, this message translates to:
+  /// **'Источник утечки'**
+  String get breachSource;
+
+  /// No description provided for @breachDate.
+  ///
+  /// In ru, this message translates to:
+  /// **'Дата утечки'**
+  String get breachDate;
+
+  /// No description provided for @whatToDo.
+  ///
+  /// In ru, this message translates to:
+  /// **'Что делать?'**
+  String get whatToDo;
+
+  /// No description provided for @breachActionAdvice.
+  ///
+  /// In ru, this message translates to:
+  /// **'Немедленно измените эти пароли. Используйте надежные уникальные пароли для каждого сервиса.'**
+  String get breachActionAdvice;
+
+  /// No description provided for @recheckBreaches.
+  ///
+  /// In ru, this message translates to:
+  /// **'Проверить снова'**
+  String get recheckBreaches;
+
+  /// No description provided for @howItWorks.
+  ///
+  /// In ru, this message translates to:
+  /// **'Как это работает'**
+  String get howItWorks;
+
+  /// No description provided for @breachCheckInfo.
+  ///
+  /// In ru, this message translates to:
+  /// **'Мы проверяем ваши пароли по базам данных известных утечек. Ваши пароли никогда не отправляются на внешние серверы.'**
+  String get breachCheckInfo;
+
+  /// No description provided for @lastChecked.
+  ///
+  /// In ru, this message translates to:
+  /// **'Последняя проверка: {date}'**
+  String lastChecked(Object date);
+
+  /// No description provided for @checkPasswordLeaks.
+  ///
+  /// In ru, this message translates to:
+  /// **'Проверить на утечки паролей'**
+  String get checkPasswordLeaks;
+
+  /// No description provided for @safe.
+  ///
+  /// In ru, this message translates to:
+  /// **'БЕЗОПАСНО'**
+  String get safe;
+
+  /// No description provided for @breachCheckError.
+  ///
+  /// In ru, this message translates to:
+  /// **'Проверка не удалась'**
+  String get breachCheckError;
+
+  /// No description provided for @tryAgain.
+  ///
+  /// In ru, this message translates to:
+  /// **'Попробовать снова'**
+  String get tryAgain;
+
+  /// No description provided for @passwordAnalytics.
+  ///
+  /// In ru, this message translates to:
+  /// **'Аналитика паролей'**
+  String get passwordAnalytics;
+
+  /// No description provided for @overallSecurity.
+  ///
+  /// In ru, this message translates to:
+  /// **'Общая безопасность'**
+  String get overallSecurity;
+
+  /// No description provided for @securityLevel.
+  ///
+  /// In ru, this message translates to:
+  /// **'Уровень безопасности'**
+  String get securityLevel;
+
+  /// No description provided for @recommendations.
+  ///
+  /// In ru, this message translates to:
+  /// **'Рекомендации'**
+  String get recommendations;
+
+  /// No description provided for @detailedStatistics.
+  ///
+  /// In ru, this message translates to:
+  /// **'Детальная статистика'**
+  String get detailedStatistics;
+
+  /// No description provided for @totalPasswords.
+  ///
+  /// In ru, this message translates to:
+  /// **'Всего паролей'**
+  String get totalPasswords;
+
+  /// No description provided for @strongPasswords.
+  ///
+  /// In ru, this message translates to:
+  /// **'Надежные пароли'**
+  String get strongPasswords;
+
+  /// No description provided for @mediumPasswords.
+  ///
+  /// In ru, this message translates to:
+  /// **'Средние пароли'**
+  String get mediumPasswords;
+
+  /// No description provided for @weakPasswords.
+  ///
+  /// In ru, this message translates to:
+  /// **'Слабые пароли'**
+  String get weakPasswords;
+
+  /// No description provided for @averageLength.
+  ///
+  /// In ru, this message translates to:
+  /// **'Средняя длина'**
+  String get averageLength;
+
+  /// No description provided for @reusedPasswords.
+  ///
+  /// In ru, this message translates to:
+  /// **'Повторяющиеся пароли'**
+  String get reusedPasswords;
+
+  /// No description provided for @oldPasswords.
+  ///
+  /// In ru, this message translates to:
+  /// **'Устаревшие пароли'**
+  String get oldPasswords;
+
+  /// No description provided for @weakPasswordsFound.
+  ///
+  /// In ru, this message translates to:
+  /// **'Слабые пароли обнаружены'**
+  String get weakPasswordsFound;
+
+  /// No description provided for @reusedPasswordsFound.
+  ///
+  /// In ru, this message translates to:
+  /// **'Повторяющиеся пароли'**
+  String get reusedPasswordsFound;
+
+  /// No description provided for @oldPasswordsFound.
+  ///
+  /// In ru, this message translates to:
+  /// **'Устаревшие пароли'**
+  String get oldPasswordsFound;
+
+  /// No description provided for @shortPasswords.
+  ///
+  /// In ru, this message translates to:
+  /// **'Короткие пароли'**
+  String get shortPasswords;
+
+  /// No description provided for @strengthen.
+  ///
+  /// In ru, this message translates to:
+  /// **'Усилить'**
+  String get strengthen;
+
+  /// No description provided for @change.
+  ///
+  /// In ru, this message translates to:
+  /// **'Изменить'**
+  String get change;
+
+  /// No description provided for @update.
+  ///
+  /// In ru, this message translates to:
+  /// **'Обновить'**
+  String get update;
+
+  /// No description provided for @lengthen.
+  ///
+  /// In ru, this message translates to:
+  /// **'Удлинить'**
+  String get lengthen;
 }
 
 class _AppLocalizationsDelegate

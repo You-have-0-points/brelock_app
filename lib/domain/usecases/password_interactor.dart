@@ -25,6 +25,10 @@ class PasswordInteractor{
     return new_password;
   }
 
+  Future<List<Password>> getAll(UuidValue consumerId) async {
+    return await passwordRepository.getAll(consumerId);
+  }
+
   Future<List<Password>> getByIds(List<UuidValue> passwordIds) async {
     final passwords = await Future.wait(
         passwordIds.map((id) => passwordRepository.get(id))
